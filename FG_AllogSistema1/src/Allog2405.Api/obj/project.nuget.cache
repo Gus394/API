@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KCagRwhD0QpezpE2doudLgpqMxdT5+fqsNawvnnqRyVEr1o67lQxMbDrsHWo0wb+X5vDw9yY1mRzvRbgqT4/3g==",
+  "dgSpecHash": "vqYLNk9ylAtNR+X/Cp+hu5UOm4eoqHAz5g4BY+8UIPjnNl0ggWa/VFPiA350Pm+ioin6+ffYLQoQL+ybLVfdqQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\7355068\\Downloads\\DTO\\FG_AllogSistema1\\src\\Allog2405.Api\\Allog2405.Api.csproj",
+  "projectFilePath": "C:\\Users\\7355068\\Downloads\\API\\FG_AllogSistema1\\src\\Allog2405.Api\\Allog2405.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\7355068\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\7.0.5\\microsoft.aspnetcore.jsonpatch.7.0.5.nupkg.sha512",
     "C:\\Users\\7355068\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\7.0.5\\microsoft.aspnetcore.mvc.newtonsoftjson.7.0.5.nupkg.sha512",

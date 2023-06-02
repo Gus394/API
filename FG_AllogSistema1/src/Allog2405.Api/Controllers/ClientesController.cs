@@ -3,6 +3,7 @@ using Allog2405.Api.Models;
 using Allog2405.Api.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 namespace Allog2405.Api.Controllers;
 
@@ -71,6 +72,20 @@ public class CustomersController : ControllerBase {
     [HttpPost]
     public ActionResult<CustomerDTO> CreateCustomer(CustomerForCreationDTO CustomerBody)
     {
+        // configurar isso de forma global
+        // URM mapeamento entidade bancod dados fsdfsgdfg
+        // customer.addresses.add()
+        // select many
+
+        if (!ModelState.IsValid)
+        {
+            Response.ContentType = "application/problem+json";
+            var problemDetailsFactory = HttpContext.RequestServices.GetRequiredService<ProblemDetailsFactory>();
+            var ValidationProblemDetails = problemDetailsFactory.CreateValidationProblemDetails(HttpContext, ModelState);
+            ValidationProblemDetails.Status = StatusCodes.Status422UnprocessableEntity;
+            return UnprocessableEntity(ValidationProblemDetails);
+        }
+        
         var CustomerEntity = new Customer()
         {
             id = CustomerData.Get().listaCustomers.Max(c => c.id) + 1,
@@ -140,6 +155,34 @@ public class CustomersController : ControllerBase {
 
             return NoContent();
         }
+
+    [HttpGet("with-address")]
+    public ActionResult<IEnumerable<CustomerWithAddressDTO>> GetCustomersWithAddresses()
+    // basicamente a gente ja pegou o dado do banco de dados e eu to dando um select pq eu quero transformar o meu customer q e uma entidade em um dto
+    // em qual dto: customerwithaddressdto, entao o select vai percorrer essa lista e ele vai me retornar a cada iteracao esse objeto ja mapeado isso se chama mapeamento
+    // mesma coisa com a entidade. Serializacao e tal sei la
+    {
+        var customerFromDatabase = CustomerData.Get().listaCustomers;
+        var customersToReturn = customerFromDatabase.Select(customer => new CustomerWithAddressDTO{
+            id = customer.id,
+            FirstName = customer.firstName,
+            LastName = customer.lastName,
+            Cpf = customer.cpf,
+            Addresses = customer.Addresses.Select(address => new AddressDTO{
+                Id = address.Id,
+                City = address.City,
+                Street = address.Street
+            }).ToList() // para resolver o problema de conversao immplicita, pegou o icollection e "forcou" com c cedilha
+        });
+        return Ok(customersToReturn);
+    }
+
+    // posso criar na mesma classe controller esse metodo mas n fica legal pq tem q coloacr um monte de coisa
+    
 }
 
 // Customer Icollection<address> adresses = new list<adress>();
+
+// existem situacoes em que nao e necessario retornar todos os dados apenas algum por exemplo so os enderecos
+// vai mandar a id pesquisar e retornar da api somente os enderecos
+// somente retornar os enderecos.

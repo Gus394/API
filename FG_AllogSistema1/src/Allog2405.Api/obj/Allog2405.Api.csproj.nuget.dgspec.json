@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\7355068\\Downloads\\DTO\\FG_AllogSistema1\\src\\Allog2405.Api\\Allog2405.Api.csproj": {}
+    "C:\\Users\\7355068\\Downloads\\API\\FG_AllogSistema1\\src\\Allog2405.Api\\Allog2405.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\7355068\\Downloads\\DTO\\FG_AllogSistema1\\src\\Allog2405.Api\\Allog2405.Api.csproj": {
+    "C:\\Users\\7355068\\Downloads\\API\\FG_AllogSistema1\\src\\Allog2405.Api\\Allog2405.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\7355068\\Downloads\\DTO\\FG_AllogSistema1\\src\\Allog2405.Api\\Allog2405.Api.csproj",
+        "projectUniqueName": "C:\\Users\\7355068\\Downloads\\API\\FG_AllogSistema1\\src\\Allog2405.Api\\Allog2405.Api.csproj",
         "projectName": "Allog2405.Api",
-        "projectPath": "C:\\Users\\7355068\\Downloads\\DTO\\FG_AllogSistema1\\src\\Allog2405.Api\\Allog2405.Api.csproj",
+        "projectPath": "C:\\Users\\7355068\\Downloads\\API\\FG_AllogSistema1\\src\\Allog2405.Api\\Allog2405.Api.csproj",
         "packagesPath": "C:\\Users\\7355068\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\7355068\\Downloads\\DTO\\FG_AllogSistema1\\src\\Allog2405.Api\\obj\\",
+        "outputPath": "C:\\Users\\7355068\\Downloads\\API\\FG_AllogSistema1\\src\\Allog2405.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
